@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Frijole" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bmi.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <title>Body Mass Index</title>
+  </head>
+  
+  
+  
+  <body>
+    <form name="bmiForm">
+     <fieldset>
+      <legend>BODY MASS INDEX</legend>
+      <label>
+      Výška:
+      <input type="number" name="heigth" id="vyska" required>cm<br>
+      </label>
+      <label>
+      Váha:
+      <input type="number" name="vaha" id="vaha" required>&nbsp;&nbsp;kg<br>
+      </label>
+      <label>
+      Výsledek:
+      <input type="number" name="bmi" id="vysledek"><br>
+      </label>      
+      <button onclick="calculateBmi()" id="calculate">GO!</button>
+     </fieldset>    
+    </form>
+    
+    <ul id="memory">
+      <li>První<input type="number" id="one"></li>
+  <!--<li id="one">První</li>
+      <li id="two">Druhá</li>
+      <li id="three">Třetí</li>  -->
+      <li>Druhá<input type="number" id="two"></li>
+      <li>Třetí<input type="number" id="three"></li>
+    </ul>
+ 
+<script>   
+function calculateBmi(){  
+	var vaha = $('#vaha').val();
+	var vyska = $('#vyska').val();
+	var vysledek = vaha / ((vyska / 100) * (vyska / 100));
+	return Math.round(vysledek);
+};
+ 
+$('#calculate').click(function(ev){
+  ev.preventDefault();
+  $('#vysledek').val(calculateBmi());
+});
+
+function ukazAlert(vysledek){
+if (vysledek<=19 && vysledek>=16) {alert("hubeňoure!");}
+else if (vysledek>19 && vysledek<=25) {alert("BMI v normě");}
+else if (vysledek>25) {alert("měl bys zhubnout špekoune!");}
+};
+
+$('#calculate').click(function(ev){
+  var vysledek = calculateBmi();
+  ev.preventDefault();
+  ukazAlert(vysledek);
+  ulozHodnotu(vysledek);
+});
+
+//vyjmout hodnotu//
+  function ulozHodnotu(vysledek){
+  var elem = document.getElementById("one");
+  elem.value = vysledek; 
+};   
+
+
+
+
+
+
+
+
+</script>
+
+
+    
+  </body>
+</html>
+
