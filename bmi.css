@@ -1,0 +1,93 @@
+/* CSS Document */
+/*body, html {
+  margin: 0;
+} */
+
+body {
+  background: url(../img/shattered.png) repeat repeat;
+}
+
+fieldset {
+  width: 500px;
+  height: 500px;
+  margin: 60 auto;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 2px;
+}
+
+legend {
+  margin: 0 auto;
+  font: normal 30px "Frijole", sans-serif;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input, 
+button {
+  background: #fff;
+  border: none;  
+}
+
+input {
+  position: relative;
+  background: none;
+  /*border-bottom: 2px dashed #5C431F;*/
+  text-align: center;
+  padding: 20px;
+}
+
+button {
+  margin: 70px 210px;
+  font: normal 25px "Pacifico", sans-serif;
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  background: #5C431F;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+label {
+  display: block;
+  height: 50px;
+  line-height: 40px;
+  padding: 10px 0;
+  font: normal 25px "Pacifico", sans-serif;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+label, button, input {
+  cursor: pointer;
+}
+
+#memory {
+  width: 300px;
+  height: 200px;
+  margin: 60 auto;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 2px;
+}
+
+li input {
+  width: 100px;
+}
+
+li {
+  list-style-type: none;
+  font: normal 25px "Pacifico", sans-serif;
+}
